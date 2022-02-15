@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <title>Note Taking App</title>
+  </head>
+  <body>
+    <div class="app container align-items-center">
+      <h1>Note Taking App</h1>
+      <div class="note-input">
+        <button class="note-btn btn-primary">ADD NOTE</button>
+        <input type="text" class="input-note" placeholder="Add a Note" />
+      </div>
+      <div class="notes-container d-flex flex-column bd-highlight mb-3">
+        <div class="notes d-flex flex-row">
+          <div class="p-2 bd-highlight">Flex item 1</div>
+          <div class="p-2 bd-highlight">Flex item 2</div>
+          <div class="p-2 bd-highlight">Flex item 3</div>
+          <div class="p-2 bd-highlight">Flex item 4</div>
+        </div>
+      </div>
+    </div>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
