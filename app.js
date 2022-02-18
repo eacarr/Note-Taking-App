@@ -11,7 +11,7 @@ noteBtn.addEventListener("click", () => {
   // get value from input bar
   getNote();
   addNote();
-  console.log(notesArr);
+  console.log(notesArr.length);
 });
 
 const getNote = () => {
@@ -29,9 +29,16 @@ const addNote = () => {
     const div = document.createElement("div");
     div.classList.add("note");
     div.innerHTML = `<p>${note}</p>`;
-    notes.append(div);
+    const btn = document.createElement("button");
+    btn.classList.add("close");
+    btn.innerHTML = `&times`;
+    notes.append(div, btn);
+
     div.addEventListener("click", () => {
       openModal(note);
+    });
+    btn.addEventListener("click", () => {
+      removeNote(note, div, btn);
     });
   }
 };
@@ -45,4 +52,14 @@ const openModal = (note) => {
   modal.addEventListener("click", () => {
     modal.style.display = "none";
   });
+};
+
+const removeNote = (note, div, btn) => {
+  div.remove(div);
+  btn.remove(btn);
+  let index = notesArr.indexOf(note);
+  if (index == -1) {
+    return;
+  }
+  notesArr.splice(index, 1);
 };
